@@ -115,7 +115,6 @@ p {
 #featured-collection,
 #featured-exhibit, 
 #recent-items {
-    overflow: hidden;
     margin:1em 0 0;
     
     h2, 
@@ -312,6 +311,10 @@ h6 {
         height: 52px;
       }
     }
+    
+    .tagline {
+      font-size: 23px;
+    }
 }
 
 /* -------------------------------------------------------------------------*/
@@ -485,8 +488,8 @@ a {
         overflow: auto;
         background-color:lighten($grey-light, 5%);
         .active {
-            background-color: lighten($accent-main, 10%);
-            a{color:white;}
+            //background-color: lighten($accent-main, 10%);
+            //a{color:white;}
         }
     }
     li {
@@ -535,7 +538,7 @@ a {
             a:hover {
                 color:white;
                 text-decoration: none;
-                background-color:lighten($accent-light, 10%);
+                background-color:$accent-light;
             }
         }
         .active a{
@@ -573,7 +576,8 @@ select {
 
 input[type=text],
 input[type=password] {
-    border-color: #fff;
+    border-color: $grey-light;
+    background: #fff;
     @include rhythm-borders(2px, 0, $base-font-size, solid);
     min-height: 1.5 * $base-line-height;
     padding: rhythm(.25);
@@ -600,6 +604,7 @@ button,
     input[type=text] {
         margin: 0;
         @include calc(width, "100% - 34px");
+        border-color:#fff;
     }
 
     &.with-advanced input[type=text] {
@@ -940,6 +945,15 @@ body.files .item-file {
     }
   }
   
+  [id^="featured-"],
+  .featured-exhibit,
+  #recent-items {
+    h2 {
+      font-size:20px;
+      padding-top:1.5em;
+    }
+  }
+  
   #featured-item {
     @include boxed;
     
@@ -974,6 +988,20 @@ body.files .item-file {
     }
   }
   
+  .featured-exhibit {
+    h2 {
+      margin-top:1em;
+      padding-bottom:0;
+    }
+    #featured-exhibit {
+      margin-top:0;
+      
+      h2 {
+        display:none;
+      }
+    }
+  }
+
   #recent-items {
     h2 {
       margin-bottom:0.3em;
