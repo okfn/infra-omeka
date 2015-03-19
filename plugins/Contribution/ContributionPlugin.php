@@ -47,7 +47,7 @@ class ContributionPlugin extends Omeka_Plugin_AbstractPlugin
         'admin_navigation_main',
         'public_navigation_main',
         'simple_vocab_routes',
-        'item_citation',
+//        'item_citation',
         'item_search_filters',
         'guest_user_links',
         'guest_user_widgets',
